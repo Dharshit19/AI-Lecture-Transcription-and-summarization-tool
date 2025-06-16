@@ -186,11 +186,10 @@ def process_folder(folder_path: str, reference_folder: str) -> None:
     print(f"\nProcessing complete: {processed_count}/{len(media_files)} files successfully processed.")
 
 if __name__ == "__main__":
-    import sys
-    if len(sys.argv) < 2:
-        print("Usage: python Project_1.py <folder_path> [reference_folder]")
-        sys.exit(1)
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    folder_path = script_dir
+    reference_folder = script_dir 
 
-    folder_path = sys.argv[1]
-    reference_folder = sys.argv[2] if len(sys.argv) > 2 else folder_path
+    print(f"Using folder: {folder_path}")
     process_folder(folder_path, reference_folder)
+
